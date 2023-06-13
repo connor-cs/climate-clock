@@ -25,33 +25,14 @@ export default function App() {
 
     const interval = setInterval(() => {
       updateRemainingTime(dateOfDeadline);
-      console.log(climateCountdown);
-    }, 1000);
+    }, 1);
 
     return () => clearInterval(interval);
   }, [climateCountdown]);
 
-
-  //TESTING TO MAKE SURE getRemainingTime WORKS.
-  //RETURNS OBJECT AS EXPECTED
-  // const time = ()=> {
-  //   const res = getRemainingTime("2029-07-22T16:00:00+00:00")
-  //   setClimateCountdown(res)
-  // console.log(time)}
-  // time()
-
-  //THIS CAUSES TOO MANY RERENDERS FOR SOME REASON
-  // const interval = setInterval(() => {
-  //       updateRemainingTime(dateOfDeadline);
-  //        console.log(climateCountdown);
-  //        getRemainingTime("2029-07-22T16:00:00+00:00")
-  //      }, 10000);
-
   function updateRemainingTime(dateOfDeadline) {
     setClimateCountdown(getRemainingTime(dateOfDeadline));
   }
-  // console.log({ climateDeadline });
-  // console.log(typeof dateOfDeadline);
 
   return (
     <div className='main'>
@@ -62,5 +43,3 @@ export default function App() {
     </div>
   );
 }
-
-//"2029-07-22T16:00:00+00:00"
