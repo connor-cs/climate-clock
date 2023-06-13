@@ -1,5 +1,5 @@
-const URL = 'https://api.climateclock.world/v2/clock.json';
 import dayjs from 'dayjs';
+const URL = 'https://api.climateclock.world/v2/clock.json';
 
 export async function getDeadlineFromAPI(url) {
   try {
