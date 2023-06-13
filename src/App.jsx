@@ -47,7 +47,6 @@ export default function App() {
   //      }, 10000);
 
   function updateRemainingTime(dateOfDeadline) {
-    console.log({ dateOfDeadline }, typeof dateOfDeadline);
     setClimateCountdown(getRemainingTime(dateOfDeadline));
   }
   // console.log({ climateDeadline });

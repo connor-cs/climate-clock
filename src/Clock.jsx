@@ -1,37 +1,34 @@
 import React from "react";
 
 export default function Clock({ time }) {
-  console.log('time from clock', time)
   return (
     <div className="clock-main">
       <h3>Time left</h3>
       <main>
-        <div className="years">
-          <span>Years</span>
+        <div className="years sect">
           <span>{time.years}</span>
+          <span className="label">Years</span>
         </div>
-        <div className="months">
-          <span>Months</span>
+        <div className="months sect">
           <span>{time.months}</span>
+          <span className="label">Months</span>
         </div>
-        <div className="days">
-          <span>Days</span>
+        <div className="days sect">
           <span>{time.days}</span>
+          <span className="label">Days</span>
         </div>
-        <div className="hours">
-          <span>Hours</span>
+        <div className="hours sect">
           <span>{time.hours}</span>
+          <span className="label">Hours</span>
         </div>
-        <div className="minutes">
-          <span>Minutes</span>
+        <div className="minutes sect">
           <span>{time.minutes}</span>
+          <span className="label">Minutes</span>
         </div>
-        <div className="seconds">
-        <span>Seconds</span>
+        <div className="seconds sect">
           <span>{time.seconds}</span>
+          <span className="label">Seconds</span>
         </div>
-
-        
       </main>
     </div>
   );

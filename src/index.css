@@ -39,3 +39,12 @@ main {
   display: flex;
   justify-content: space-around;
 }
+
+.label {
+  font-weight: 700;
+}
+
+.sect {
+  display: flex;
+  justify-content: space-between;
+}
