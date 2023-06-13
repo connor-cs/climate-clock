@@ -14,6 +14,7 @@ export default function App() {
     hours: '',
     minutes: '',
     seconds: '',
+    milliseconds: ''
   });
   const [dateOfDeadline, setDateOfDeadline] = useState(null);
 

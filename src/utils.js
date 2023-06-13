@@ -34,6 +34,7 @@ export function getRemainingTime(climateDeadline) {
     hours: getHours(deadline, now),
     minutes: getMinutes(deadline, now),
     seconds: getSeconds(deadline, now),
+    milliseconds: getMilliseconds(deadline, now)
   };
 }
 
@@ -59,13 +60,18 @@ function getHours(deadline, now) {
 }
 
 function getMinutes(deadline, now) {
-  const minutes = deadline.diff(now, 'minutes') % 365;
+  const minutes = deadline.diff(now, 'minutes') % 60;
   return minutes;
 }
 
 function getSeconds(deadline, now) {
   const seconds = deadline.diff(now, 'seconds') % 60;
   return seconds;
+}
+
+function getMilliseconds(deadline, now) {
+  const mili = deadline.diff(now, 'millisecond')
+  return mili
 }
 
 // const deadline = getDeadline(URL)

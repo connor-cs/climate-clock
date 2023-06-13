@@ -29,6 +29,10 @@ export default function Clock({ time }) {
           <span>{time.seconds}</span>
           <span className="label">Seconds</span>
         </div>
+        <div className="seconds sect">
+          <span>{time.milliseconds}</span>
+          <span className="label">Milliseconds</span>
+        </div>
       </main>
     </div>
   );
