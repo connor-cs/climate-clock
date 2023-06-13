@@ -22,8 +22,16 @@ export default function Clock({ time }) {
           <span>Hours</span>
           <span>{time.hours}</span>
         </div>
-
+        <div className="minutes">
+          <span>Minutes</span>
+          <span>{time.minutes}</span>
+        </div>
+        <div className="seconds">
         <span>Seconds</span>
+          <span>{time.seconds}</span>
+        </div>
+
+        
       </main>
     </div>
   );

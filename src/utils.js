@@ -28,7 +28,7 @@ export function getRemainingTime(climateDeadline) {
   }
 
   return {
-    years: '00',
+    years: getYears(deadline, now),
     months: getMonths(deadline, now),
     days: getDays(deadline, now),
     hours: getHours(deadline, now),
@@ -38,6 +38,11 @@ export function getRemainingTime(climateDeadline) {
 }
 
 // console.log('willthiswork?', dayjs(1879430400000));
+
+function getYears(deadline, now) {
+  const years = deadline.diff(now, 'years')
+  return years
+}
 
 function getMonths(deadline, now) {
   const months = deadline.diff(now, 'months') % 12;
@@ -59,7 +64,7 @@ function getMinutes(deadline, now) {
 }
 
 function getSeconds(deadline, now) {
-  const seconds = deadline.diff(now, 'seconds') % 365;
+  const seconds = deadline.diff(now, 'seconds') % 60;
   return seconds;
 }
 
