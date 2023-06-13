@@ -25,7 +25,7 @@ export default function App() {
     const interval = setInterval(() => {
       updateRemainingTime(dateOfDeadline);
       console.log(climateCountdown);
-    }, 10000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [climateCountdown]);
