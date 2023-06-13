@@ -70,7 +70,7 @@ function getSeconds(deadline, now) {
 }
 
 function getMilliseconds(deadline, now) {
-  const mili = deadline.diff(now, 'millisecond')
+  const mili = deadline.diff(now, 'millisecond') % 1000
   return mili
 }
 
