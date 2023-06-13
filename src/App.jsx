@@ -8,12 +8,12 @@ const URL = 'https://api.climateclock.world/v2/clock.json';
 
 export default function App() {
   const [climateCountdown, setClimateCountdown] = useState({
-    year: '12',
-    month: '',
-    day: '',
-    hour: '',
-    minute: '',
-    second: '',
+    years: '12',
+    months: '',
+    days: '',
+    hours: '',
+    minutes: '',
+    seconds: '',
   });
   const [dateOfDeadline, setDateOfDeadline] = useState(null);
 
