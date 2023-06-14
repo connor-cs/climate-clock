@@ -47,7 +47,7 @@ function getYears(deadline, now) {
 
 function getMonths(deadline, now) {
   const months = deadline.diff(now, 'months') % 12;
-  return months;
+  return padWithZeroes(months, 2);
 }
 
 function getDays(deadline, now) {
@@ -71,23 +71,11 @@ function getSeconds(deadline, now) {
 
 function getMilliseconds(deadline, now) {
   const mili = deadline.diff(now, 'millisecond') % 1000
-  return mili
+  return padWithZeroes(mili, 3)
 }
 
-// const deadline = getDeadline(URL)
-//       .then((data) => data.toString())
-//       .then((deadlineString) =>
-//         setClimateDeadline({
-//           year: deadlineString.slice(0, 4),
-//           month: deadlineString.slice(6, 7),
-//           day: deadlineString.slice(8, 10),
-//           hour: deadlineString.slice(11, 13),
-//           minute: deadlineString.slice(14, 16),
-//           second: deadlineString.slice(17, 19),
-//         })
-//       );
-// console.log(getDays(1879430400000, Date.now()));
-
-// const testDead = dayjs(1879430400000);
-// const testNow = dayjs();
-// console.log('please', getDays(testDead, testNow));
+function padWithZeroes(number, minLen) {
+  const numString = number.toString()
+  if (numString.length >= minLen) return numString
+  return "0".repeat(minLen-numString.length) + numString
+}
