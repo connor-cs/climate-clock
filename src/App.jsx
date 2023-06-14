@@ -28,7 +28,7 @@ export default function App() {
     }, 1);
 
     return () => clearInterval(interval);
-  }, [climateCountdown]);
+  }, [climateCountdown, dateOfDeadline]);
 
   function updateRemainingTime(dateOfDeadline) {
     setClimateCountdown(getRemainingTime(dateOfDeadline));
