@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { getDeadlineFromAPI } from './utils.js';
-import Clock from './Clock.jsx';
-import './index.css'
-import { getRemainingTime } from './utils.js';
+import React, { useEffect, useState } from "react";
+import { getDeadlineFromAPI } from "./utils.js";
+import Clock from "./Clock.jsx";
+import "./index.css";
+import { getRemainingTime } from "./utils.js";
 
-const URL = 'https://api.climateclock.world/v2/clock.json';
+const URL = "https://api.climateclock.world/v2/clock.json";
 
 export default function App() {
   const [climateCountdown, setClimateCountdown] = useState({
-    years: '12',
-    months: '',
-    days: '',
-    hours: '',
-    minutes: '',
-    seconds: '',
-    milliseconds: ''
+    years: 0,
+    months: 0,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    milliseconds: 0,
   });
-  const [dateOfDeadline, setDateOfDeadline] = useState(null);
+  const [dateOfDeadline, setDateOfDeadline] = useState(0);
 
   useEffect(() => {
     getDeadlineFromAPI(URL)
@@ -35,9 +35,9 @@ export default function App() {
   }
 
   return (
-    <div className='main'>
+    <div className="main">
       <h1>Climate Deadline Countdown</h1>
-      <div className='container'>
+      <div className="container">
         <Clock time={climateCountdown} />
       </div>
     </div>
